@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,17 +20,18 @@ namespace ExampleSQLApp
             InitializeComponent();
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(425, 255);
-            int size=int.Parse(obj.returnMess());
-            int y = 0;
-            string str;
-            while (true)
-            {
-                str = obj.returnMess();
-                this.richTextBox1.Text += str;
-                if (y == size-1) break;
-                y++;
-            }
-            
+
+                int size = int.Parse(obj.returnMess());
+                int y = 0;
+                string str;
+                while (true)
+                {
+                    str = obj.returnMess();
+                    this.richTextBox1.Text += str;
+                    if (y == size - 1) break;
+                    y++;
+                }
+
         }
 
         private void closeButton_Click(object sender, EventArgs e)
@@ -80,15 +81,7 @@ namespace ExampleSQLApp
             DataBank.buf1 = "sorting";
 
             obj.sendMess();
-            this.Hide();
-            this.richTextBox1.Text = 
-"|id|Логин                    |Пароль                   |ФИО                      |Зарплата                 |Должность                |Телефон                  |\n" +
-"2 | Fran2 | A111 | Маруся Б.К.                | 555 | бугалтер | 668(621)693 - 19 - 2\n" +
-"5 | Jerik | B000 | Петрович | 5000 | Зам | 7(2720)250 - 28 - 9\n"+
-"3 | John | C222 | Ведр Н.Е.                  | 323 | грущик | 010(032)024 - 43 - \n4" +
-"1 | Karl | B222 | Петр Б.И.                  | 300 | уборщик | 712(82)560 - 84 - 0\n";
-
-            this.Show();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
