@@ -86,11 +86,13 @@ namespace ExampleSQLApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DataBank.whatDo = 3;
-            DataBank.buf1 = "goIn";
-            obj.sendMess();
+
             if (objS.sumbolsInstr(textBox8.Text))
             {
+
+                DataBank.whatDo = 3;
+                DataBank.buf1 = "goIn";
+                obj.sendMess();
                 DataBank.buf1 = textBox8.Text;
                 obj.sendMess();
                 this.Close();
@@ -100,11 +102,12 @@ namespace ExampleSQLApp
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DataBank.whatDo = 4;
-            DataBank.buf1 = "delete";
-            obj.sendMess();
+            
             if (objS.onlyNumbersInStr(textBox1.Text))
             {
+                DataBank.whatDo = 4;
+                DataBank.buf1 = "delete";
+                obj.sendMess();
                 DataBank.buf1 = textBox1.Text;
                 obj.sendMess();
                 this.Close();
